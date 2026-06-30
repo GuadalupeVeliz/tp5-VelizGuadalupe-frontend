@@ -1,0 +1,36 @@
+/* Fondo de la navbar */
+.navbar {
+  background: radial-gradient(circle, #d9a8f7 0%, #c885f2 40%, #6a0dad 100%);
+}
+
+/* Marca */
+.navbar-brand {
+  color: #1a0e2e !important;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+/* Links */
+.navbar-nav .nav-link {
+  transition: all 0.2s ease-in-out;
+  font-size: large;
+}
+
+/* Hover en links */
+.navbar-nav .nav-link:hover {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+/* Link activo */
+.navbar-nav .nav-link.active {
+  border-bottom: 2px solid #d6b3ff;
+}
+
+/* Botón hamburguesa */
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}

@@ -1,1 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 180px; /* tiene que coincidir con la altura del footer (180px) */
+  margin: 0;
+}
