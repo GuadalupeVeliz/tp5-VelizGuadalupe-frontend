@@ -1,0 +1,25 @@
+<div class="tarjeta">
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="text" class="form-control" id="email" name="email" [(ngModel)]="email" >
+  </div>
+  <div class="mb-3">
+    <label for="textoOrigen" class="form-label">Texto a Traducir</label>
+    <textarea class="form-control" id="textoOrigen" rows="3" name="textoOrigen" [(ngModel)]="textoOrigen"></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="idiomaOrigen" class="form-label">Idioma Origen</label>
+    <input type="text" class="form-control" name="idiomaOrigen" id="idiomaOrigen" [(ngModel)]="idiomaOrigen">
+  </div>
+  <div class="mb-3">
+    <label for="idiomaDestino" class="form-label">Idioma Destino</label>
+    <input type="text" class="form-control" name="idiomaDestino" id="idiomaDestino" [(ngModel)]="idiomaDestino" >
+  </div>
+  <div>
+    <button class="boton btn" (click)="obtenerTraduccion()">Traducir</button>
+  </div>
+  <div class="mb-3">
+    <label for="textoTraducido" class="form-label">Texto Traducido</label>
+    <textarea class="form-control" id="textoTraducido" rows="3">{{textoTraducido}}</textarea>
+  </div>
+</div>

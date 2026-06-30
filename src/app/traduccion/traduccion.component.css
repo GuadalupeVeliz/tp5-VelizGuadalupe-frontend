@@ -1,0 +1,15 @@
+.tarjeta {
+  width: 50rem;
+  margin:auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background:#f5f0ff;
+  padding: 20px;
+}
+
+.boton{
+  background-color: #6a0dad;
+  color:#ffffff;
+  width: 40rem;
+  margin-left: 50px;
+}

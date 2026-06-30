@@ -1,0 +1,75 @@
+h2 {
+  color: #6a0dad;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background-color: #6a0dad;
+  border-color: #6a0dad;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #1a0e2e;
+  border-color: #1a0e2e;
+  box-shadow: 0 0 8px rgba(106, 13, 173, 0.4);
+}
+
+.btn-secondary {
+  background-color: #c885f2;
+  border-color: #c885f2;
+  color: #1a0e2e;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-secondary:hover {
+  background-color: #d9a8f7;
+  border-color: #d9a8f7;
+  color: #1a0e2e;
+}
+
+.card {
+  border: 1px solid #d6b3ff;
+  border-radius: 8px;
+}
+
+.btn-success {
+  background-color: #6a0dad;
+  border-color: #6a0dad;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-success:hover {
+  background-color: #1a0e2e;
+  border-color: #1a0e2e;
+}
+
+.form-control:focus {
+  border-color: #c885f2;
+  box-shadow: 0 0 0 0.2rem rgba(200, 133, 242, 0.25);
+}
+
+.spinner-border.text-primary {
+  color: #6a0dad !important;
+}
+
+
+.list-group-item {
+  background: radial-gradient(circle at left, #f5e6ff 0%, #ffffff 60%);
+  border-left-color: #6a0dad;
+}
+
+.badge.bg-secondary {
+  background-color: #6a0dad !important;
+}
+
+.spinner-lila {
+  color: #6a0dad !important;
+}
+
+.alert-lila {
+  background-color: #f5e6ff;
+  color: #6a0dad;
+  border-color: #d6b3ff;
+}

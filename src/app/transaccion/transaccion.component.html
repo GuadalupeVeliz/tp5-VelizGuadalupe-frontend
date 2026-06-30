@@ -1,0 +1,57 @@
+<div class="container my-4">
+  <h2 class="mb-4">Transacciones de Traducción</h2>
+  <div class="d-flex flex-wrap gap-2 mb-4">
+    <button class="btn btn-primary" (click)="recuperarTransacciones()">
+      RECUPERAR TODOS
+    </button>
+    <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#filtroCollapse"
+      aria-expanded="false" aria-controls="filtroCollapse">
+      RECUPERAR POR FILTRO
+    </button>
+  </div>
+  <div class="collapse mb-4" id="filtroCollapse">
+    <div class="card card-body">
+      <form (ngSubmit)="recuperarTransaccionesFiltro()">
+        <div class="row g-3 align-items-end">
+          <div class="col-md-5">
+            <label for="idiomaOrigenFiltro" class="form-label">Idioma origen</label>
+            <input type="text" class="form-control" id="idiomaOrigenFiltro" name="idiomaOrigenFiltro"
+              placeholder="Ej: en" [(ngModel)]="idiomaOrigenFiltro" required>
+          </div>
+          <div class="col-md-5">
+            <label for="idiomaDestinoFiltro" class="form-label">Idioma destino</label>
+            <input type="text" class="form-control" id="idiomaDestinoFiltro" name="idiomaDestinoFiltro"
+              placeholder="Ej: es" [(ngModel)]="idiomaDestinoFiltro" required>
+          </div>
+          <div class="col-md-2">
+            <button type="submit" class="btn btn-success w-100"
+              (click)="recuperarTransaccionesFiltro()">Filtrar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div *ngIf="cargando" class="text-center my-3">
+    <div class="spinner-border spinner-lila" role="status">
+      <span class="visually-hidden">Cargando...</span>
+    </div>
+  </div>
+
+  <div *ngIf="!cargando && transacciones.length === 0" class="alert alert-lila">
+    No hay transacciones para mostrar.
+  </div>
+
+  <ul class="list-group" *ngIf="!cargando && transacciones.length > 0">
+    <li class="list-group-item" *ngFor="let t of transacciones">
+      <div class="d-flex justify-content-between align-items-start">
+        <div>
+          <p>Email Cliente: {{t.emailCliente}}</p>
+          <p class="mb-1"><strong>Original ({{ t.idiomaOrigen }}):</strong> {{ t.textoOrigen }}</p>
+          <p class="mb-0"><strong>Traducido ({{ t.idiomaDestino }}):</strong> {{ t.textoDestino }}</p>
+        </div>
+        <span class="badge bg-secondary" *ngIf="t.email">{{ t.email }}</span>
+      </div>
+    </li>
+  </ul>
+</div>
