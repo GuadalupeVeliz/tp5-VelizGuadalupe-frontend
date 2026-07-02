@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class TraduccionService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getTraduccion(texto: string, origen: string, destino: string): Observable<any> {
     let httpOptions = {
@@ -18,13 +18,13 @@ export class TraduccionService {
       }),
     };
 
-    let body ={
-      q:texto,
-		source: origen,
-		target: destino
+    let body = {
+      q: texto,
+      source: origen,
+      target: destino
     }
 
-    return this.http.post("https://deep-translate1.p.rapidapi.com/language/translate/v2",body,httpOptions);
+    return this.http.post("https://deep-translate1.p.rapidapi.com/language/translate/v2", body, httpOptions);
   }
 
 }

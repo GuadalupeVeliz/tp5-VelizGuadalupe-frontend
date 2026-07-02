@@ -1,0 +1,104 @@
+<div class="container my-3">
+	<div class="row">
+
+		<!-- crear / modificar publicaciones -->
+		<div class="col-12 col-lg-4 mb-3 mb-lg-0">
+			<h2>Gestión de Publicaciones</h2>
+			<!-- formulario publicaciones -->
+			<form #formPublicacion="ngForm" (submit)="submitPublicacion()">
+				<!-- titulo -->
+				<div class="mb-3">
+					<input type="text" class="w-100" placeholder="Título" [(ngModel)]="titulo" name="titulo" required>
+				</div>
+				<!-- contenido -->
+				<div class="form-floating mb-3">
+					<textarea class="w-100" placeholder="Escribe algo aqui" [(ngModel)]="contenido" name="contenido"></textarea>
+				</div>
+				<!-- select empleados -->
+				<div class="mb-3">
+					<select class="form-select w-100" [(ngModel)]="empleadoSeleccionadoId" name="empleadoSeleccionadoId" required>
+						<option [ngValue]="null" selected disabled (invalid)="true">Selecciona un empleado</option>
+						<option *ngFor="let e of empleados" [ngValue]="e.id">
+							{{ e.apellido }} {{ e.nombre }}
+						</option>
+					</select>
+				</div>
+				
+				<div class="d-flex gap-3">
+					<button type="submit" [disabled]="formPublicacion.invalid" class="btn btn-info">{{ modoEdicion ? 'Guardar cambios' : 'Publicar' }}</button>
+					<div *ngIf="cargandoPublicacion" class="text-center mt-1">
+						<div class="spinner-border spinner-lila" role="status">
+							<span class="visually-hidden">Cargando...</span>
+						</div>
+				</div>
+				</div>
+			</form>
+		</div>
+
+		<!-- lista de publicaciones -->
+		<div class="col-12 col-lg-8">
+			<!-- filtros -->
+			<div class="d-flex flex-column">
+				<h2 class="mb-2">Filtrar por:</h2>
+				<div class="row">
+
+					<!-- select empleados -->
+					<div class="col-12 col-lg-4 mb-3">
+						<select class="form-select w-100" [(ngModel)]="empleadoSeleccionadoFiltro"
+							(change)="obtenerPublicaciones()">
+							<option [ngValue]="null" selected>Todos los empleados</option>
+							<option *ngFor="let e of empleados" [ngValue]="e.id">
+								{{ e.apellido }} {{ e.nombre }}
+							</option>
+						</select>
+					</div>
+
+					<!-- input titulo -->
+					<div class="col-12 col-lg-4 mb-3">
+						<input class="w-100" type="text" name="titulo" [(ngModel)]="parteTitulo" placeholder="Buscar por título"
+							(input)="obtenerPublicaciones()">
+					</div>
+
+					<!-- checkbox es vigente -->
+					<div class="w-auto col-lg-2 mb-3">
+						<label class="check d-flex gap-2">
+							<span>Vigentes</span>
+							<input type="checkbox" [(ngModel)]="esVigente" (change)="obtenerPublicaciones()">
+						</label>
+					</div>
+
+					<div class="col-6 col-lg-2 mb-3">
+						<button (click)="limpiarFiltros()" class="btn btn-info w-100">Sin filtros</button>
+					</div>
+
+				</div>
+			</div>
+
+			<!-- cards -->
+			<div *ngIf="cargandoPublicaciones" class="text-center my-3">
+				<div class="spinner-border spinner-lila" role="status">
+					<span class="visually-hidden">Cargando...</span>
+				</div>
+			</div>
+			
+			<div *ngIf="!cargandoPublicaciones" class="row">
+				<div class="col-12 col-md-6 p-2" *ngFor="let p of publicaciones">
+					<div class="card w-100 h-100" style="width: 18rem;">
+						<div class="card-body">
+							<h5 class="card-title">{{ p.titulo }}</h5>
+							<p class="card-text">{{ p.contenido }}</p>
+							<hr class="mb-1">
+							<div class="d-flex justify-content-between">
+								<p class="m-0">{{ p.empleado.nombre }} {{ p.empleado.apellido }}:</p>
+								<p class="m-0">{{ p.fechaPublicacion }}</p>
+							</div>
+						</div>
+						<button (click)="modificarPublicacion(p)" class="btn-modificar">Editar</button>
+						<button (click)="eliminarPublicacion(p.id)" class="btn-eliminar">❌</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
