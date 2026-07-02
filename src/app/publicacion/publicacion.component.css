@@ -1,0 +1,101 @@
+.card {
+	background-color: #f5edfa;
+	position: relative;
+}
+
+.card-body h5 {
+	font-size: 16px;
+}
+
+.card-text {
+	font-size: 14px;
+}
+
+select,
+textarea,
+input {
+	padding: 10px 14px;
+	font-size: 16px;
+	border: 1px solid #d59bff;
+	border-radius: 4px;
+	background-color: #fff;
+	color: #333;
+	cursor: pointer;
+	outline: none;
+}
+
+select:focus,
+textarea:focus,
+input:focus {
+	border-color: #b349ff;
+	box-shadow: 0 0 0 3px rgba(159, 122, 234, 0.3);
+}
+
+select:hover,
+input:hover {
+	border-color: #cc84ff;
+}
+
+input[type="checkbox"]:checked {
+	background-color: #b349ff;
+}
+
+textarea {
+	min-height: 100px;
+	max-height: 200px;
+}
+
+.btn-info {
+	background-color: #9133d4;
+	border-color: #9133d4;
+	color: #fff;
+	border-radius: 4px;
+}
+
+.btn-info:hover {
+	background-color: #6c24a0;
+	border-color: #6c24a0;
+	color: #ddd;
+}
+
+.card {
+	border-radius: 4px;
+}
+
+.btn-modificar {
+	background-color: #f8eeff;
+	border: 1px solid #f8eeff;
+	position: absolute;
+	right: 36px;
+	top: 6px;
+	width: 55px;
+	height: 30px;
+	padding: 0;
+	color: #333;
+}
+
+.btn-modificar:hover {
+	background-color: #dab6f3;
+	border: 1px solid #dab6f3;
+}
+
+.btn-eliminar {
+	background-color: #f8eeff;
+	border: 1px solid #f8eeff;
+	position: absolute;
+	right: 6px;
+	top: 6px;
+	width: 30px;
+	height: 30px;
+	padding: 0;
+	color: #333;
+}
+
+.btn-eliminar:hover {
+	background-color: #dab6f3;
+	border: 1px solid #dab6f3;
+}
+
+.spinner-lila {
+  color: #6a0dad !important;
+}

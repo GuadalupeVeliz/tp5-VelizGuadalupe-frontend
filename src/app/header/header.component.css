@@ -1,11 +1,11 @@
 /* Fondo de la navbar */
 .navbar {
-  background: radial-gradient(circle, #d9a8f7 0%, #c885f2 40%, #6a0dad 100%);
+  background: radial-gradient(circle, #bf64f3 0%, #9634cf 40%, #630599 100%);
 }
 
 /* Marca */
 .navbar-brand {
-  color: #1a0e2e !important;
+  color: #fff !important;
   font-weight: bold;
   letter-spacing: 0.5px;
 }
@@ -16,14 +16,20 @@
   font-size: large;
 }
 
+.navbar-nav {
+  width: 100%;
+  column-gap: 10px;
+}
+
 /* Hover en links */
 .navbar-nav .nav-link:hover {
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
 }
 
 /* Link activo */
-.navbar-nav .nav-link.active {
-  border-bottom: 2px solid #d6b3ff;
+.nav-link.active {
+  color: #fff;
+  border-bottom: 1px solid #d6b3ff;
 }
 
 /* Botón hamburguesa */
@@ -33,4 +39,8 @@
 
 .navbar-toggler-icon {
   filter: invert(1);
+}
+
+.nav-link {
+  color: #dad7d7;
 }

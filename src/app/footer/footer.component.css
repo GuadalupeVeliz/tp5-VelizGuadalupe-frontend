@@ -1,6 +1,6 @@
 .footer {
-  background: radial-gradient(circle, #d9a8f7 0%, #c885f2 40%, #6a0dad 100%);
-  color: #1a0e2e;
+  background: radial-gradient(circle, #964ac2 0%, #7c2bac 40%, #47056d 100%);
+  color: #fff;
 }
 
 .footer h5 {
@@ -15,10 +15,12 @@
   margin: 0 10px;
   text-decoration: none;
   transition: 0.2s;
+  color: #bbb;
 }
 
 .footer-links a:hover {
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  color: #fff;
 }
 
 footer {
